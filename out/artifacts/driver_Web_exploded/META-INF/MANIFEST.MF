@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Created-By: IntelliJ IDEA
+Built-By: cjh
+Build-Jdk: Oracle OpenJDK version 17.0.7
+Implementation-Title: driver
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.mywf
+Main-Class: ${start-class}
+

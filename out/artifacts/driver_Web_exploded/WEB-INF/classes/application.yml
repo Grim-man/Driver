@@ -1,0 +1,47 @@
+spring :
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/driver?serverTimezone=Asia/Shanghai
+    username: root
+    password: cjh1020
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  thymeleaf:
+    prefix: classpath:/templates/html/   # 访问template下的html文件需要配置模板，映射
+    cache: false
+#  mvc:
+#    view:
+#      prefix: driver/templates/html/
+#      suffix: .html
+
+#  web:
+#    resources:
+#      static-locations: file:${dirPath}
+#  servlet:
+#    multipart:
+#      enabled: true
+#      max-file-size: 2MB
+#      max-request-size: 20MB
+#      location: ${dirPath}
+
+#  redis:
+#    jedis:
+#      pool:
+#        max-active: 8
+#        min-idle: 0
+#        max-idle: 8
+#        max-wait: 1000
+
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mapper/*.xml
+server:
+  port: 8080
+
+
+
+
+#dirPath: E:/storage
+#user_save_path: E:/storage/user/
+#jjwt-key: gao

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>登录</title>
+  <link rel="stylesheet" href="../../static/lib/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../static/lib/myCss.css">
+  <link rel="stylesheet" href="../../static/lib/sign-in.css">
+  <script src="../../static/lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="../../static/lib/jquery3.6.0.js"></script>
+  <script src="../../static/lib/login.js"></script>
+  <style>
+    body{
+      height: 100%;
+      /*background-position-x: left;*/
+      /*background-position-y: bottom;*/
+      background: rgba(0, 0, 0, 0) url("../../static/img/login_bg.webp") no-repeat scroll left bottom;
+      background-size: 100% 100%;
+      /*background-origin: padding-box;*/
+      /*background-clip: border-box;*/
+      /*position: relative;*/
+    }
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .b-example-divider {
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
+
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
+
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+  </style>
+
+</head>
+<body class="text-center">
+<div id="alert" role="alert">
+</div>
+<div class="card1 padding-none">
+  <main class="form-signin m-auto">
+    <form>
+      <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-person-vcard" viewBox="0 0 16 16">
+        <path d="M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm4-2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5ZM9 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 9 8Zm1 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Z"/>
+        <path fill-rule="evenodd" d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2ZM1 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H8.96c.026-.163.04-.33.04-.5C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1.006 1.006 0 0 1 1 12V4Z"/>
+      </svg>
+      <h1 class="h3 mt-2 mb-3 fw-normal">登录</h1>
+
+      <div class="form-floating">
+        <input type="tel" class="form-control" id="floatingInput" placeholder="off">
+        <label for="floatingInput">手机号</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <label for="floatingPassword">密码</label>
+      </div>
+      <div class="checkbox mb-3 text-start">
+        <label class="mr-30">角色:</label>
+        <label>
+          学员<input class="mr-40"  type="radio" name="role" value="Student" checked>
+          教练<input class="mr-40" type="radio" name="role" value="Coach">
+          管理员<input class="mr-40" type="radio" name="role" value="Admin">
+        </label>
+      </div>
+      <button class="w-100 btn btn-lg btn-primary mb-3" type="button" id="login">登录</button>
+      <button class="w-100 btn btn-lg btn-primary" type="button" id="btn-login-jump-back">返回</button>
+    </form>
+  </main>
+</div>
+</body>
+</html>

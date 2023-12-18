@@ -1,0 +1,73 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  height: 100%;
+  /*background-position-x: left;*/
+  /*background-position-y: bottom;*/
+  background: rgba(0, 0, 0, 0) url("../img/login_bg.webp") no-repeat scroll left bottom;
+  background-size: 100% 100%;
+  /*background-origin: padding-box;*/
+  /*background-clip: border-box;*/
+  /*position: relative;*/
+}
+
+.card1 {
+  margin-bottom: 1.3em;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(26,26,26,.1);
+  box-sizing: border-box;
+}
+
+.form {
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  padding: 1.3em 3em;
+}
+.form-signin {
+  width: 500px;
+  padding: 30px;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: 10px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.size_30{
+  width: 100px;
+}
+
+.size_70{
+  height: 100%;
+  width: 310px;
+}
+.mr-30{
+  margin-right: 30px;
+}
+.mr-40{
+  margin-right: 60px;
+}
+

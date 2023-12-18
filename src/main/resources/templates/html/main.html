@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+    <link rel="stylesheet" href="../../static/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../static/lib/bootstrap/css/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" href="../../static/lib/dashboard.css">
+    <link rel="stylesheet" href="../../static/lib/main.css">
+    <link rel="stylesheet" href="../../static/lib/dropdowns.css">
+    <script src="../../static/lib/jquery3.6.0.js"></script>
+    <script src="../../static/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../static/lib/bootstrap/js/bootstrap-datetimepicker.js"></script>
+    <script src="../../static/lib/bootstrap/js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+    <script src="../../static/lib/linq.js"></script>
+    <script src="../../static/lib/main.js"></script>
+    <script src="../../static/lib/dashboard.js"></script>
+    <script src="../../static/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+<div id="alert" role="alert">
+</div>
+<button id="modal-trigger" hidden="hidden" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal"></button>
+<div id="modal" class="modal fade" tabindex="-1"
+     data-backdrop="static" data-keyboard="false" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">首先填写个人信息</h5>
+                <button id="modal-btn-close-x" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-floating mb-2">
+                    <input type="tel" class="form-control" id="name" placeholder="off">
+                    <label for="name">姓名</label>
+                </div>
+                <div class="form-floating mb-2">
+                    <label for="dropdown-sex"></label>
+                    <select id="dropdown-sex" class="btn btn-outline-dark">
+                            <option class="dropdown-item">性别</option>
+                            <option class="dropdown-item">男</option>
+                            <option class="dropdown-item">女</option>
+                    </select>
+
+                </div>
+
+                <div class="form-floating mb-2">
+                    <label for="dropdown-card"></label>
+                    <select id="dropdown-card" class="btn btn-outline-dark">
+                        <option class="dropdown-item">驾驶证类型</option>
+                        <option class="dropdown-item">A1</option>
+                        <option class="dropdown-item">A2</option>
+                        <option class="dropdown-item">A3</option>
+                        <option class="dropdown-item">B1</option>
+                        <option class="dropdown-item">B2</option>
+                        <option class="dropdown-item">C1</option>
+                        <option class="dropdown-item">C2</option>
+                        <option class="dropdown-item">C3</option>
+                        <option class="dropdown-item">C4</option>
+                        <option class="dropdown-item">D</option>
+                        <option class="dropdown-item">E</option>
+                        <option class="dropdown-item">F</option>
+                        <option class="dropdown-item">M</option>
+                        <option class="dropdown-item">N</option>
+                        <option class="dropdown-item">P</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="modal-btn-close" type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+                <button id="save" type="button" class="btn btn-primary">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<header class="navbar navbar-dark bg-dark sticky-top flex-md-nowrap p-0 shadow d-flex flex-wrap align-items-center justify-content-center justify-content-md-between border-bottom">
+<!--    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">Company name</a>-->
+<!--    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--        <span class="navbar-toggler-icon"></span>-->
+<!--    </button>-->
+    <a href="#" class="d-flex align-items-center justify-content-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+<!--        <img class="size_icon ms-4" src="../img/driver_icon.webp"  alt="icon">-->
+<!--        <img src="../img/name_logo.png" alt="logo">-->
+        <span class="text-white ms-4 mt-1 mb-2 ft-36 justify-content-center ">宏达驾考</span>
+    </a>
+    <p id="nav-name" class="text-white"></p>
+    <div class="navbar-nav">
+        <div class="nav-item text-nowrap">
+<!--            <a class="nav-link px-3 text-white" href="">Sign out</a>-->
+            <button id="btn-logout" type="button" class="btn btn-light me-3">登出</button>
+
+<!--            <button type="button" class="btn btn-outline-dark mr-30 ">登出</button>-->
+<!--            <button class="btn btn-primary px3 text-white">登出</button>-->
+        </div>
+    </div>
+</header>
+
+<div class="container-fluid">
+    <div class="row">
+<!--        <nav id="sidebarMenu" class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px">-->
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <div class="position-sticky pt-5 sidebar-sticky">
+                <ul id="ul-nav" class="nav nav-pills flex-column mb-auto">
+<!--                    <li class="nav-item">-->
+<!--&lt;!&ndash;                        <button class="btn nav-link active" aria-current="page">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <span class="align-text-bottom">首页</span></button>&ndash;&gt;-->
+<!--                        <a class="nav-link" aria-current="page" href="#">-->
+<!--                            <span id="home" class="align-text-bottom">公告管理</span>-->
+
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li class="nav-item">-->
+<!--                        <a class="nav-link" aria-current="page" href="#">-->
+<!--                            <span id="student" class="align-text-bottom">学员管理</span>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li class="nav-item">-->
+<!--                        <a class="nav-link" href="#">-->
+<!--                            <span id="coach" class="align-text-bottom">教练管理</span>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li class="nav-item">-->
+<!--                        <a class="nav-link" href="#">-->
+<!--                            <span id="car" class="align-text-bottom">车辆管理</span>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li class="nav-item">-->
+<!--                        <a class="nav-link" href="#">-->
+<!--                            <span id="relation" class="align-text-bottom"></span>-->
+<!--                            关系管理-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li class="nav-item">-->
+<!--                        <a class="nav-link" href="#">-->
+<!--                            <span id="personal" class="align-text-bottom"></span>-->
+<!--                            个人中心-->
+<!--                        </a>-->
+<!--                    </li>-->
+                </ul>
+            </div>
+        </nav>
+
+        <main id="main" class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 id="title" class="h2">首页</h1>
+                <div id="btn-group" class="btn-toolbar mb-2 mb-md-0">
+                    <div class="btn-group me-2">
+                        <button id="btn-add" type="button" class="btn btn-sm btn-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+                            </svg>
+                            添加
+                        </button>
+                    </div>
+                    <div class="btn-group me-2">
+                        <button id="btn-page" type="button" class="btn btn-sm btn-outline-secondary">0/0（页）</button>
+                    </div>
+                    <div class="btn-group me-2">
+                        <button id="btn-prev" type="button" class="btn btn-sm btn-outline-secondary">上一页</button>
+                        <button id="btn-next" type="button" class="btn btn-sm btn-outline-secondary">下一页</button>
+                    </div>
+<!--                    This week <span data-feather="calendar" class="align-text-bottom"></span>-->
+                    <label>
+                        <select id="btn-op" type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                            <option class="dropdown-item">排序选项</option>
+                        </select>
+                    </label>
+                    <div id="btn-single"></div>
+                </div>
+            </div>
+            <div class="container justify-content-center">
+                <div id="content" class="clear"><!-- 内容列表开始 -->
+
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<button id="modal-add-trigger" hidden="hidden" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-add"></button>
+<div id="modal-add" class="modal fade" tabindex="-1"
+     data-backdrop="static" data-keyboard="false" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="modal-add-title" class="modal-title"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div id="modal-add-body" class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <button id="modal-bn-close" type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+                <button id="modal-btn-add" type="button" class="btn btn-primary">添加</button>
+            </div>
+        </div>
+    </div>
+</div>
+<button id="modal-modify-trigger" hidden="hidden" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-modify"></button>
+<div id="modal-modify" class="modal fade" tabindex="-1"
+     data-backdrop="static" data-keyboard="false" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="modal-modify-title" class="modal-title"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div id="modal-modify-body" class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+                <button id="modal-btn-modify" type="button" class="btn btn-primary">修改</button>
+            </div>
+        </div>
+    </div>
+</div>
+<button id="modal-delete-trigger" hidden="hidden" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-delete"></button>
+<div id="modal-delete" class="modal fade" tabindex="-1"
+     data-backdrop="static" data-keyboard="false" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="modal-delete-title" class="modal-title"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div id="modal-delete-body" class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+                <button id="modal-btn-delete" type="button" class="btn btn-danger">删除</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
